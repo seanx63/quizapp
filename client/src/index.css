@@ -14,8 +14,25 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+.nav_list{
+  display: -webkit-inline-box;
+  margin: 5px;
+}
+.navbar-nav .nav-link {
+  padding-right: 10px;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input:focus::placeholder {
+  color: transparent;
+}
+.login_form{
+  border: 3px solid #2f6d90;
+  background-color: rgb(52,58,64);
+  margin-top: 100px;
+  padding-bottom: 10px;
+  padding: 20px;
+  color: white;
+}
+.login_input{
+  margin-top: 10px;
 }

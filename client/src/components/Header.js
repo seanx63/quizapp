@@ -1,18 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 export default function Header() {
   return (
-    <nav class="navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse">
+
+    <nav class="navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="navbar">
 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link active" href="#">QuizzApp</a>
+            <Link to="/"class="nav-link active" href="#">QuizzApp</Link>
         </li>
       </ul>
-      <ul class="navbar-nav my-2 my-lg-0">
+      <ul class="navbar-nav nav_list">
         <li class="nav-item">
-            <a class="nav-link" href="#">Log in</a>
+            <Link to="/login" class="nav-link" href="#">Log in</Link>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Sign out</a>
