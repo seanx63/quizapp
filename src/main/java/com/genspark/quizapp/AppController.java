@@ -3,31 +3,32 @@ package com.genspark.quizapp;
 import com.genspark.quizapp.Entity.User;
 import com.genspark.quizapp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+
+@RestController
 public class AppController {
     @Autowired
     private UserRepository repo;
 
-    @GetMapping("")
+    @GetMapping(path = "/")
     public String viewHomePage() {
         return "index";
     }
 
-    @GetMapping("/register")
+    @GetMapping(path = "/login")
     public String showSignUpForm(Model model){
         model.addAttribute("user", new User());
-        return "signup_form";
+        return "";
     }
 
     @PostMapping(" ")
     public String processRegistration(User user){
         repo.save(user);
-        //display "registered successfully" screen/message
-        return "register_success";
+        return "Registered Successfully!";
     }
 }
