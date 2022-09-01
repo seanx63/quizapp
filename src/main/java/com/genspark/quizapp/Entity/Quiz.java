@@ -11,7 +11,7 @@ public class Quiz {
     public Quiz() {
     }
 
-    public Quiz(long quizID, String category, quizCategory question) {
+    public Quiz(long quizID, quizCategory category, String question) {
         this.quizID = quizID;
         this.category = category;
         this.question = question;
@@ -25,8 +25,8 @@ public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long quizID;
-    private String category;
-    private quizCategory question;
+    private quizCategory category;
+    private String question;
 
     public long getQuizID() {
         return quizID;
@@ -36,19 +36,19 @@ public class Quiz {
         this.quizID = quizID;
     }
 
-    public String getCategory() {
+    public quizCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(quizCategory category) {
         this.category = category;
     }
 
-    public quizCategory getQuestion() {
+    public String getQuestion() {
         return question;
     }
 
-    public void setQuestion(quizCategory question) {
+    public void setQuestion(String question) {
         this.question = question;
     }
 }
