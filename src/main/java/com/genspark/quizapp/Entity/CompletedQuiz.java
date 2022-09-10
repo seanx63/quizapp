@@ -6,10 +6,17 @@ import javax.persistence.*;
 public class CompletedQuiz {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, unique = true)
     private long completedQuizID;
     //TODO: create relationship between quiz.quizID and completedquiz.quizID
+
+    @Column(nullable = false)
     private long quizID;
+
+    @Column(nullable = false)
     private long score;
+
+    @Column(nullable = false)
     private long userID;
 
     public CompletedQuiz() {
