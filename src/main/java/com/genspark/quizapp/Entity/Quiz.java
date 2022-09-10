@@ -1,10 +1,7 @@
 package com.genspark.quizapp.Entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Quiz {
@@ -24,8 +21,13 @@ public class Quiz {
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false, unique = true)
     private long quizID;
+
+    @Column(nullable = false)
     private quizCategory category;
+
+    @Column(nullable = false, unique = true)
     private String question;
 
     public long getQuizID() {
